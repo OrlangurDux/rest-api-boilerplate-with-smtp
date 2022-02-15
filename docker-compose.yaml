@@ -1,0 +1,13 @@
+version: '3.3'
+networks:
+  sender:
+services:
+  api:
+    build: .
+    ports:
+      - '8025'
+    volumes:
+      - ./src:/app
+      - ./.env-production:/.env
+    networks:
+      - sender
