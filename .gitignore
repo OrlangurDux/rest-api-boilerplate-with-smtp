@@ -8,6 +8,7 @@ main
 
 .env
 .env-production
+.env.test
 
 # exclude everything
 uploaded/*

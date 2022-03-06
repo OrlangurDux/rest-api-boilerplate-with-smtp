@@ -1,0 +1,10 @@
+basePath: /api/v1
+host: localhost:9769
+info:
+  contact:
+    name: API Support
+  description: This is a boilerplate backend server resource.
+  title: RESTful API
+  version: "1.0"
+paths: {}
+swagger: "2.0"

@@ -1,0 +1,14 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a boilerplate backend server resource.",
+        "title": "RESTful API",
+        "contact": {
+            "name": "API Support"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:9769",
+    "basePath": "/api/v1",
+    "paths": {}
+}

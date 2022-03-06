@@ -2,6 +2,7 @@ package middlewares
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -24,7 +25,8 @@ func DotEnvVariable(key string) string {
 	} else {
 		// run under go test
 		path, _ := os.Getwd()
-		err := godotenv.Load(strings.Split(path, "sender")[0] + "sender/" + ".env")
+		err := godotenv.Load(strings.Split(path, "src")[0] + "/" + ".env")
+		fmt.Println(path)
 		if err != nil {
 			log.Fatalf("Error loading .env.test file")
 		}

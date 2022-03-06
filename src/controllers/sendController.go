@@ -12,6 +12,18 @@ import (
 	"strings"
 )
 
+// ShowAccount godoc
+// @Summary      Show an account
+// @Description  get string by ID
+// @Tags         accounts
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int  true  "Account ID"
+// @Success      200  {object}  model.Account
+// @Failure      400  {object}  httputil.HTTPError
+// @Failure      404  {object}  httputil.HTTPError
+// @Failure      500  {object}  httputil.HTTPError
+// @Router       /accounts/{id} [get]
 var SendRequest = http.HandlerFunc(func(response http.ResponseWriter, request *http.Request) {
 	var req models.Request
 	reqBody, _ := ioutil.ReadAll(request.Body)
