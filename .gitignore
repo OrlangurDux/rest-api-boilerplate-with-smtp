@@ -27,3 +27,4 @@ src/vendor/
 
 .idea
 .vscode
+__debug_bin

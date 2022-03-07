@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	docs "sender/docs"
 	"sender/middlewares"
 	"sender/routes"
 
@@ -13,6 +14,7 @@ func main() {
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 
 	port := middlewares.DotEnvVariable("PORT")
+	host := middlewares.DotEnvVariable("HOST")
 
 	router := routes.Routes()
 
@@ -22,6 +24,6 @@ func main() {
 	})
 
 	handler := c.Handler(router)
-
+	docs.SwaggerInfo.Host = host + ":" + port
 	http.ListenAndServe(":"+port, middlewares.LogRequest(handler))
 }

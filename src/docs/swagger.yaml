@@ -1,4 +1,19 @@
 basePath: /api/v1
+definitions:
+  Request:
+    properties:
+      name:
+        type: string
+      phone:
+        type: string
+    type: object
+  Response:
+    properties:
+      msg:
+        type: string
+      string:
+        type: integer
+    type: object
 host: localhost:9769
 info:
   contact:
@@ -6,5 +21,39 @@ info:
   description: This is a boilerplate backend server resource.
   title: RESTful API
   version: "1.0"
-paths: {}
+paths:
+  /send/request:
+    post:
+      consumes:
+      - application/json
+      description: Send message to email
+      parameters:
+      - description: Request param
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            $ref: '#/definitions/Response'
+        "400":
+          description: error
+          schema:
+            $ref: '#/definitions/Response'
+        "404":
+          description: error
+          schema:
+            $ref: '#/definitions/Response'
+        "500":
+          description: error
+          schema:
+            $ref: '#/definitions/Response'
+      summary: Send request
+      tags:
+      - Request
 swagger: "2.0"
