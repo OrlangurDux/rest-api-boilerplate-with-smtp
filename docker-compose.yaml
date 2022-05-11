@@ -3,9 +3,11 @@ networks:
   sender:
 services:
   api:
-    build: .
+    build:
+      context: .
+      dockerfile: development.dockerfile
     ports:
-      - '8025'
+      - '8025:8025'
     volumes:
       - ./src:/app
       - ./.env-production:/.env
